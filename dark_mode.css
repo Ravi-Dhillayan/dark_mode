@@ -1,0 +1,18 @@
+#check2{
+    height: 200px;
+    border: 2px solid black;
+    width: 80%;
+    margin-left: 50px;
+    background-color: white;
+    color: black;
+}
+.checkedId{
+    background-color: rgb(66, 51, 51);
+    /* border: 5px solid yellow; */
+    color: aliceblue;
+}
+#check2.checkedId2{
+    background-color: rgb(66, 51, 51);
+    /* border: 5px solid yellow; */
+    color: aliceblue;
+}

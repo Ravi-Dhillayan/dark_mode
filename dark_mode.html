@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dark_mode</title>
+    <link rel="stylesheet" href="dark_mode.css">
+</head>
+
+<body>
+    <div id="maincheckbox">
+        <div id="check1">
+            <label for="">dark_mode</label>
+            <input type="checkbox" id="checkbox">
+        </div>
+        <h2>Dark_Mode project with the help of html And JavaScript</h2>
+        <div>
+            <label for="">Container Dark mode</label>
+            <input type="checkbox" id="checkbox2">
+        </div>
+        <div id="check2">
+            This is a Container
+        </div>
+    </div>
+    <script>
+        const body = document.body
+        const checkbox = document.getElementById('checkbox')
+        const check2 = document.getElementById("check2")
+
+        checkbox.addEventListener("change", function (e) {
+            if (checkbox.checked) {
+                body.classList.add("checkedId")
+                saveData();
+            } else {
+                body.classList.remove("checkedId")
+               saveData();
+            }
+            saveData();
+            // console.log(body.checkedId);
+
+            // if (!body.checkedId) {
+            //     check2.style.backgroundColor = "white"
+            // }
+            // const checkedId = document.getElementById("checkedId");
+
+        })
+        const div2 = document.getElementById("div2")
+        const checkbox2 = document.getElementById("checkbox2")
+        checkbox2.addEventListener("change", function (e) {
+            // console.log("hello");
+
+            if (checkbox2.checked) {
+                check2.classList.add("checkedId2")  
+                saveData();
+            }
+            else {
+                check2.classList.remove("checkedId2");
+                saveData();
+                
+            }
+            saveData();
+        })
+   
+        function saveData(){
+            const checkedId = body.classList.contains("checkedId")
+             const checkedId2 = check2.classList.contains("checkedId2") 
+            console.log(checkedId);
+            console.log(checkedId2);
+            localStorage.setItem("data", checkedId)
+                localStorage.setItem("data2", checkedId2)
+            // if(checkedId || checkedId2 ){
+            //     // debugger
+            //     localStorage.setItem("data", checkedId)
+            //     localStorage.setItem("data2", checkedId2)
+            //     // console.log("hello");   
+            // }
+            // if(!checkedId || !checkedId2){
+            //     localStorage.setItem("data", checkedId)
+            //     localStorage.setItem("data2", checkedId2)
+            // }
+        }
+        function showData(){
+               let checkBox1 =JSON.parse(localStorage.getItem("data"));
+                let checkBox2 = JSON.parse(localStorage.getItem("data2"));
+                
+                if (checkBox1) {
+                body.classList.add("checkedId")
+                checkbox.checked = true;
+            }    
+                if (checkBox2) {
+                    check2.classList.add("checkedId2")
+                    checkbox2.checked = true;
+                }      
+              
+            }
+            showData();
+        // saveData();
+
+    </script>
+</body>
+
+</html>
